@@ -1,0 +1,14 @@
+C:\Users\DAVID\source\repos\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.exe.config
+C:\Users\DAVID\source\repos\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.exe
+C:\Users\DAVID\source\repos\PayrollManagementSystem\bin\Debug\PayrollManagementSystem.pdb
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.AssemblyReference.cache
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.AddEmployee.resources
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.Login.resources
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.Properties.Resources.resources
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.GenerateResource.cache
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.exe
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.pdb
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.ModifyEmployee.resources
+C:\Users\DAVID\source\repos\PayrollManagementSystem\obj\Debug\PayrollManagementSystem.Employees.resources
