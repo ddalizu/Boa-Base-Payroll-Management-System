@@ -172,6 +172,7 @@
             // 
             // delete
             // 
+            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.Location = new System.Drawing.Point(291, 479);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(129, 37);
@@ -181,6 +182,7 @@
             // 
             // confirm
             // 
+            this.confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm.Location = new System.Drawing.Point(442, 479);
             this.confirm.Name = "confirm";
             this.confirm.Size = new System.Drawing.Size(131, 37);
@@ -231,9 +233,10 @@
             // 
             // calculateDeductions
             // 
+            this.calculateDeductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculateDeductions.Location = new System.Drawing.Point(703, 273);
             this.calculateDeductions.Name = "calculateDeductions";
-            this.calculateDeductions.Size = new System.Drawing.Size(149, 37);
+            this.calculateDeductions.Size = new System.Drawing.Size(157, 40);
             this.calculateDeductions.TabIndex = 23;
             this.calculateDeductions.Text = "Calculate Deductions";
             this.calculateDeductions.UseVisualStyleBackColor = true;
