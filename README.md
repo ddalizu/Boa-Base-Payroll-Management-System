@@ -27,5 +27,5 @@ Used to host the MySQL database.
 #### MySQL.Data NuGet Package:
 Installed via NuGet Package Manager in Visual Studio.
 
-###License
+### License
 This project is licensed under the MIT License. See the LICENSE file for more details.
