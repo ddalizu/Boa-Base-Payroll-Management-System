@@ -1,4 +1,9 @@
-﻿namespace PayrollManagementSystem
+﻿using MySql.Data.MySqlClient;
+using Mysqlx.Datatypes;
+using System.Windows.Forms;
+using System;
+
+namespace PayrollManagementSystem
 {
     partial class AddEmployee
     {
@@ -32,12 +37,10 @@
             this.add = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -64,6 +67,7 @@
             this.add.TabIndex = 1;
             this.add.Text = "Add Employee";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // label2
             // 
@@ -84,16 +88,6 @@
             this.label3.Size = new System.Drawing.Size(84, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Last Name:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(63, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Employee ID:";
             // 
             // label5
             // 
@@ -132,14 +126,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(155, 24);
             this.txtFirstName.TabIndex = 8;
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(249, 177);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(155, 24);
-            this.txtId.TabIndex = 9;
             // 
             // txtLastName
             // 
@@ -206,12 +192,10 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.add);
@@ -229,17 +213,55 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.ComboBox department;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button home;
+
+  
+        
+        public void CreateEmployee()
+
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            int salary = int.Parse(txtSalary.Text);
+            string department = txtFirstName.Text;
+            int phoneNumber = int.Parse(txtPhone.Text);
+
+            using (var connection = new MySqlConnection(Services.connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "INSERT INTO Employees (FirstName, LastName, Salary, Department, PhoneNumber) " +
+                       "VALUES (@firstname,@lastname, @salary, @department, @phone)";
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@firstname", firstName);
+                        command.Parameters.AddWithValue("@lastname", lastName);
+                        command.Parameters.AddWithValue("@salary", salary);
+                        command.Parameters.AddWithValue("@department", department);
+                        command.Parameters.AddWithValue("@phone", phoneNumber);             
+
+                        command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Success!");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to enter into database: " + ex.Message);
+                }
+            }
+
+
+        }
     }
 }

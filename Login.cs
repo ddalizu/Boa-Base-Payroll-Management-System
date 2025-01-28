@@ -24,7 +24,7 @@ namespace PayrollManagementSystem
 
         private void test_Click(object sender, EventArgs e)
         {
-            Services.TestConnection();
+            
         }
     }
 }

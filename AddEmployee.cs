@@ -16,5 +16,10 @@ namespace PayrollManagementSystem
         {
             InitializeComponent();
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            CreateEmployee();
+        }
     }
 }
